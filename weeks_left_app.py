@@ -44,7 +44,7 @@ def calculate_weeks_left():
 # Create the main window
 window = tk.Tk()
 window.title("Weeks Left Calculator")
-window.geometry("400x400")
+window.geometry("500x400")
 window.configure(bg="black")
 
 # Create the label
