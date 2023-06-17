@@ -1,41 +1,46 @@
-# Weeks Left Calculator
+# Weeks Left Calculator Application
 
-This desktop application, written in Python, allows you to calculate the number of weeks left until a specific date. It also displays a countdown timer in days, hours, and minutes.
+The Weeks Left Calculator is a simple application that calculates the number of weeks left between the current date and a user-provided date. It also displays a countdown timer showing the remaining days, hours, and minutes until the target date.
 
 ## Features
 
-- Enter a date in the format `YYYY-MM-DD` to calculate the number of weeks left until that date.
-- If no date is entered, the application reads the date from a file named `dateparm` in the same folder. If the file does not exist or contains an invalid date, the default date of `YYYY-MM-DD` is used.
-- The calculated number of weeks left is displayed in a large font below the calculate button.
-- A countdown timer is shown below the result label, indicating the remaining time in days, hours, and minutes until the specified date.
-- Every hour, a system sound is played to notify the user.
+- Users can enter a target date in the format YYYY-MM-DD.
+- If no date is entered, the application will use a default date retrieved from a file called 'dateparm'.
+- The application calculates the number of weeks left until the target date.
+- It displays the result in a label, showing the number of weeks left until the target date.
+- The application also shows a countdown timer, indicating the remaining days, hours, and minutes until the target date.
+- If an hour has passed since the last check, the application plays a sound to notify the user.
 
-## Prerequisites
+## How to Use
 
-- Python 3.x
-- `tkinter` library for the GUI interface
-- `winsound` library for playing the system sound (Windows only)
+1. Launch the application.
+2. Enter the target date in the 'Enter a date (YYYY-MM-DD)' field. If left blank, the default date will be used.
+3. Click the 'Calculate' button.
+4. The application will display the number of weeks left until the target date in a label.
+5. It will also show a countdown timer indicating the remaining days, hours, and minutes until the target date.
+6. If an hour has passed, the application will play a sound to notify the user.
+7. To change the target date, simply update the 'Enter a date (YYYY-MM-DD)' field and click 'Calculate' again.
+8. The application will recalculate and display the updated results.
 
-## Usage
+Note: The default date can be set by modifying the 'dateparm' file. If the file doesn't exist or contains an invalid date format, a default date of '2023-10-21' will be used.
 
-1. Run the Python script (`week_calc.py`) to launch the application.
-2. Enter a date in the format `YYYY-MM-DD` into the input field.
-3. Click the "Calculate" button to calculate the weeks left and display the result.
-4. The result label will show the number of weeks left until the specified date.
-5. The countdown label will display the remaining time in days, hours, and minutes.
-6. Each hour, a system sound will be played to indicate the passage of time.
+## Code Explanation
 
-## Customization
+The code is written in Python and uses the Tkinter library for creating the graphical user interface (GUI). Here's an overview of the code:
 
-- You can modify the default date (`2023-10-21`) by editing the code and changing the `default_date` variable in the `get_date_from_file` function.
-- To change the sound played each hour, you can replace the `"SystemExclamation"` parameter in the `winsound.PlaySound` function call with the desired system sound alias.
-
-## File Structure
-
-- `week_calc.py`: Python script containing the main code for the desktop application.
-- `dateparm` (optional): Text file containing a date in the format `YYYY-MM-DD`. If present, the application reads the date from this file.
-- `README.md`: Markdown file explaining the code and usage instructions.
+- The `get_date_from_file()` function reads the target date from the 'dateparm' file. If the file doesn't exist or contains an invalid date format, a default date is returned.
+- The `calculate_weeks_left()` function is called when the user clicks the 'Calculate' button. It retrieves the entered date from the input field and calculates the number of weeks left until the target date.
+- The function also updates the result label with the calculated number of weeks left and displays a countdown timer.
+- It checks if an hour has passed since the last check and plays a sound if it has.
+- The main window is created using Tkinter, and the necessary labels, entry field, and button are added to the window.
+- The `previous_hours` variable is used to keep track of the previous hour to check if an hour has passed.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+The Weeks Left Calculator application is licensed under the MIT License.
+
+MIT License
+-----------
+
+[MIT License](https://opensource.org/licenses/MIT)
+
